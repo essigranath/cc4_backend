@@ -21,7 +21,7 @@ async def analyze_sentiment(request: Request):
     text = data.get("text", "")
     # tarkistetaan että tekstikenttä on olemassa
     if not text:
-        raise HTTPException(status_code=400, detail="Text field is required.")
+        raise HTTPException(status_code=400, detail="Text field is required")
     # analysoidaan tekstin sentiment
     blob = TextBlob(text)
     polarity = blob.sentiment.polarity
